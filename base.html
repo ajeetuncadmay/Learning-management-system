@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+     <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <style>
+        :root
+        {
+        --bgcolor1:#f34573;
+        --bgcolor2:#2a6171;
+        --txtcolor1:#f34573;
+        --txtcolor2:#2a6171;
+        }
+        .bg-mycolor1
+        {
+        background:var(--bgcolor1)!important;
+        }
+        .bg-mycolor2
+        {
+        background:var(--bgcolor2)!important;
+        }
+        .txt-mycolor1
+        {
+        color:var(--txtcolor1);
+        }
+         .txt-mycolor2
+        {
+        color:var(--txtcolor2);
+        }
+        #menu
+        {
+        background:transparent !important;
+        }
+        #menu ul li a
+        {
+        color:green;
+        font-size:14px !important;
+        }
+        #menu ul li a:hover
+        {
+         background-color: #f34573;
+         box-shadow: 5px 5px 5px white , 5px 5px 5px black;
+         border-radius: 5px 5px 5px 5px;
+         
+         
+        }
+       .footer1
+        {
+        min-height:300px;
+        }
+        .footer2
+        {
+        min-height:50px;
+        margin-top:.1%;
+
+        }
+        .t1
+        {
+        font-size:14px;
+        }
+
+    </style>
+
+<div class="container-+fluid">
+
+    <div class="row t1 bg-light text-center border">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+<i class="fa-solid fa-envelope text-dark"></i>
+         <b class="text-dark"> ajeetuncadmay@learning.in</b>
+         <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="col-lg-3 col-md-6 text-dark col-sm-12">
+<i class="fa-solid fa-phone fa-spin"></i>
+          +91,9984962608
+      </div>
+      <div class="col-lg-3 col-md-6  text-dark col-sm-12">
+        WELCOME I LEARNING HUB
+      </div>
+      <div class="col-lg-3 col-md-6  col-sm-12">
+<a href="http://facebook.com"><i class="fa-brands fa-square-facebook text-dark"></i></a>
+<a href="http://youtube.com"><i class="fa-brands fa-square-youtube text-dark"></i></a>
+<a href="http://instagram.com"><i class="fa-brands fa-square-instagram text-dark"></i></a>
+<a href="http://www.web whatsapp.com"><i class="fa-brands fa-square-whatsapp text-dark"></i></a>
+<a href="http://twitter.com"><i class="fa-brands fa-square-twitter text-dark"></i></a>
+        </div>
+    </div>
+    <div class="row t2">
+        <div class="col-sm-10 mx-auto py-2" >
+      <div class="row">
+          <div class="col-sm-4 txt-mycolor2 fs-4">
+            <i class="fa-solid fa-graduation-cap"></i>
+            INDEED&nbsp;<b class="txt-mycolor1">LEARNIN
+              <i class="fa-solid fa-chalkboard-user"></i>
+
+          </b>
+          </div>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 text-end pt-2">
+     <a href="/user/contact/" class="btn btn-sm bg-mycolor1 rounded-pill text-light">Enquiry</a>
+     <a href="" class="btn btn-sm bg-dark rounded-pill text-light">Feedback
+
+     </a>
+     <a href="/user/signin/" class="btn btn-sm bg-dark rounded-pill text-light">Login</a>
+
+          </div>
+      </div>
+
+        </div>
+    </div>
+    <div class="row t3 bg-mycolor2">
+<div class="col-sm-8 mx-auto " style="font-size:20px;">
+    <!--start menu-->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="/user/index/">
+              <i class="fa-solid fa-house-user "></i>Home</a>
+        </li>
+
+
+          <li class="nav-item">
+          <a class="nav-link text-light" href="/user/batches/">
+              <i class="fa-solid fa-hand-point-right"></i>About Us</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link text-light" href="/user/batches/">
+              <i class="fa-solid fa-people-group"></i>New Batches</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link text-light" href="/user/signup/">
+              <i class="fa-solid fa-eject fa-rotate-180"></i>Sign Up</a>
+        </li>
+
+          <li class="nav-item">
+          <a class="nav-link text-light" href="/user/about/">
+              <i class="fa-regular fa-address-card"></i>Our Facility</a>
+          </li>
+            <li class="nav-item">
+          <a class="nav-link text-light" href="/user/success/">
+              <i class="fa-regular fa-address-card"></i>Our Placement </a>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!--end menu-->
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-sm-12" style="min-height:400px;">
+{% block childpage %}
+{% endblock %}
+</div>
+</div>
+<div class="row footer1  bg-dark">
+    <div  class="col-sm-4 py-5 ps-5">
+<img src="{% static 'images/first.png'%}"  class="pt-2" height="60px" width="200px"/><br/>
+<img src="{% static 'images/second.png'%}"   class="pt-2" height="60px" width="200px"/><br/>
+        <a href="#">
+<img src="{% static 'images/third.png'%}"    class="pt-2"height="60px" width="200px"/><br/>
+        </a>
+    </div>
+    <div class="col-sm-4 ">
+        <h1><b style="color:white; font-size:30px;"><u >Contact</u> </b>
+            <b style="color:white;font-size:30px;">Address</b></h1>
+        <br/><b class="text-warning"><i class="fa-solid fa-house"></i></b>
+        <b style="color:white;">plot No-43, Behing H.p Petrol Pump</b><br/>
+        <b style="color:white;">Tedhi Pulia Ring Rd ,Sector 5,</b><br/>
+        <b style="color:white;">Vikas Nagar ,Lucknow</b><br/>
+        <b style="color:white;">Uttar Pradesh 226022</b><br/><br/>
+        <b class="text-warning"><i class="fa-solid fa-phone fa-spin"></i> </b>
+         <b style="color:white;">+91-9984962608</b>
+          <b class="text-warning"><i class="fa-solid fa-phone fa-spin"></i> </b>
+         <b style="color:white;">+91-7080683123</b><br/>
+          <b class="text-warning"><i class="fa-regular fa-envelope"></i> </b>
+         <b style="color:white;">ajeetuncadmay@gmail.com</b>
+    </div>
+    <div class="col-sm-4 py-4">
+<img src="{% static 'images/indeedf1.png'%}"  height="60px" width="200px"/><br/>
+    <b style="color:white;">
+    Ajeetuncadmay is an organization working in both software <br/>
+    Development and Software Tranning Which aims to<br/>
+    make allits client feel special and help them to<br/> become successful</b><br/><br/>
+        <h1><b style="color:white; font-size:30px;"><u>Stay </u></b>
+            <b style="color:white;font-size:30px;">Connected </b></h1>
+         <b style="color:white; text-decoration:none;">
+             <a href="http://www.facebook.com"><i class="fa-brands fa-facebook-f text-light ps-1"></i></a>
+            <a href="http://www.twitter.com" ><i class="fa-brands fa-twitter text-light ps-3"></i> </a>
+             <a href="http://www.instagram.com"> <i class="fa-brands fa-instagram text-light ps-3"></i></a>
+             <a href="http://web whatsapp.com"> <i class="fa-brands fa-whatsapp text-light ps-3"></i></a>
+             <a href="http://www.youtube.com"> <i class="fa-brands fa-youtube text-light ps-3"></i></a>
+         </b>
+    </div>
+</div>
+<div class="row footer2  bg-dark">
+    <div class="col-sm-6 "><b style="color:white;"><i class="fa-solid fa-circle-h"></i></b>
+         <b style="color:white;">2023</b>
+        <b class="text-warning">Indeed Learning </b><b style="color:white;">2023 | Developed By </b>
+        <b class="text-warning">Ajeetuncadmay Team in e-commerce</b>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-2">
+           <b class="text-warning">Privacy and Policy</b>
+    </div>
+
+</div>
+<script src="{% static 'js/bootstrap.bundle.js'%}"></script>

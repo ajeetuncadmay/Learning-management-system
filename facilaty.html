@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="text-center fs-2">Our<b class="txt-mycolor">Facility</b></div>
+<!-- start latest news -->
+<div class="row news py-3">
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+   <div class="col-sm-3 py-2">
+     <div class="card">
+       <img src="{% static 'images/sir5.jpeg'%}" class="card-img-top"/>
+       <div class="card-body">
+         <h5 class="card-title">Sonu singh</h5>
+         <b>,DIPLOMA,B.TECH,M.TECH </b><br/>
+         <a href="#" class="btn bg-mycolor text-light mt-2">Contact now
+         <i class="fa-regular fa-eye"></i>
+         </a><br/>
+
+           <b class="text-muted">Updated at:
+             <i class="fa-regular fa-calendar-days"></i>
+           </b>7PM 09-09-2023
+
+       </div>
+     </div>
+   </div>
+        <!-- new row -->
+          <div class="col-sm-3 py-2">
+     <div class="card">
+       <img src="{% static 'images/sir7.jpeg'%}" class="card-img-top"/>
+       <div class="card-body">
+         <h5 class="card-title">Ajeet singh</h5>
+         <b>B.TECH,M.TECH,P.H.D</b><br/>
+         <a href="#" class="btn bg-mycolor text-light mt-2">Contact now
+         <i class="fa-regular fa-eye"></i>
+         </a><br/>
+
+           <b class="text-muted">Updated at:
+             <i class="fa-regular fa-calendar-days"></i>
+           </b>7PM 09-09-2023
+
+       </div>
+     </div>
+   </div>
+        <!-- end new row -->
+    </div>
+  </div>
+</div>
+<!-- end latest news -->
+
+{% endblock %}

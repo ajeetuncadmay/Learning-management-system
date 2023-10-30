@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+  .card
+    {
+        box-shadow: 5px 5px 5px black,6px 5px 7px red,7px 5px 7px green; 
+      
+    }
+</style>
+<div class="text-center fs-2 txt-mycolor1">New<b class="txt-mycolor2"> Batches</b></div>
+<!-- start latest news -->
+<div class="row py-4" style="background:#deedec;">
+<div class="col-sm-10 mx-auto">
+  <div class="row">
+{% for a in bdata %}
+    <div class="col-lg-3 col-md-6 col-sm-12">
+  <div class="card">
+    <img src="/{{a.batch_pic}}" class="card-img-top"/>
+    <div class="card-body">
+      <p class="card-text text-center">
+        <big><b>{{a.name}}</b></big><br/>
+      </p>
+      <p class="card-text">
+      <small class="badge bg-mycolor2 rounded-pill">
+         {{a.starting_date}}
+      </small>
+      </p>
+    </div>
+  </div>
+      </div>
+  {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

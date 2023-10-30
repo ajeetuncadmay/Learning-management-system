@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="text-center fs-2">Feed<b class="txt-mycolor">Back</b></div>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+     <form method ="post">
+                   {% csrf_token %}  <!-- class site request forvel  for security purpose -->
+                   Name <input type="text" name="name" placeholder="Name..."class="form-control">
+                   Email <input type="email" name="email" placeholder="Email..."class="form-control">
+                   Mobile <input type="number"name="mobile" placeholder="Mobile no..."class="form-control">
+                   Massage<textarea style="min-height:80px;resize:none;" name="message" class="form-control" required></textarea>
+                   <center><input type="submit" value="save" class="btn bg-mycolor"/></center><br/>
+               </form>
+</div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock %}

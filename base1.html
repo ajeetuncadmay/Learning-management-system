@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+     <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <style>
+        :root
+        {
+        --bgcolor1:#f34573;
+        --bgcolor2:#2a6171;
+        --txtcolor1:#f34573;
+        --txtcolor2:#2a6171;
+        }
+        .bg-mycolor1
+        {
+        background:var(--bgcolor1)!important;
+        }
+        .bg-mycolor2
+        {
+        background:var(--bgcolor2)!important;
+        }
+        .txt-mycolor1
+        {
+        color:var(--txtcolor1);
+        }
+         .txt-mycolor2
+        {
+        color:var(--txtcolor2);
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row menu bg-dark">
+<div class="col-sm-12">
+    <!-- start menu -->
+    <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2" href="#">Indeed <b class="txt-mycolor1">Learning <i class="fa-solid fa-graduation-cap"></i></b> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-light" id="offcanvasDarkNavbarLabel">
+            {% if request.session.user  %}
+            <img src="/{{request.session.userpic }}" style="max-height:55px;" class="img-thumbnail"/>
+            {{request.session.username }}
+            <p style="font-size:13px;">
+                {{ request.session.user }}
+            </p>
+            {% endif %}
+        </h5>
+
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/student/index/">
+                <i class="fa-solid fa-list"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/student/lectures/"><i class="fa-solid fa-video"></i> Lectures</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/notes/"><i class="fa-solid fa-book"></i> E Notes</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/tasks/"><i class="fa-solid fa-video"></i> Task</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/batches/"><i class="fa-solid fa-video"></i> Upcoming Batches</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/liveclasses/"><i class="fa-solid fa-video"></i> Live Classes | Timing </a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="/student/uprofile/"><i class="fa-solid fa-user"></i> Update Profile</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/softwarekit/"><i class="fa-solid fa-download"></i> Software Kit</a>
+          </li>
+
+             <li class="nav-item">
+            <a class="nav-link" href="/student/logout/"><i class="fa-solid fa-power-off"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+    <!-- end menu -->
+</div>
+    </div>
+    <div class="row t1 bg-mycolor2">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 txt-mycolor1 text-center">Your Welcome In Student Zone</div>
+        <div class="col-sm-4"></div>
+    </div>
+
+<div class="row">
+    <div class="col-sm-12" style="min-height:450px;background:#f6f6f6;">
+        {% block studentzone %}
+        {% endblock %}
+    </div>
+</div>
+
+
+<div class="row footer bg-dark text-light py-2 fs-5 text-center">
+    <div class="col-sm-6">
+        &copy; Ajeetuncadmay Pvt. Ltd.
+    </div>
+    <div class="col-sm-6">
+        Developed By : Ajeet singh.
+    </div>
+</div>
+    </div>
+<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+</body>
+</html>

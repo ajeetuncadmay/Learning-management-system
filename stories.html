@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="text-center fs-2 txt-mycolor1">Success<b class="txt-mycolor2"> Stories</b></div>
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <form method="get">
+        <div class="row">
+            <div class="col-sm-5">
+                College
+                <select class="form-control" name="college">
+                    <option>--Select College--</option>
+                {% for i in cdata %}
+                    <option value="{{i.id}}">{{i.college_name}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            <div class="col-sm-5">
+                Training Session
+                 <select class="form-control" name="year">
+                    <option>--Select year--</option>
+                     {% for x in sdata %}
+                     <option value="{{x.id}}">{{x.session}}</option>
+                     {% endfor %}
+
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <input type="submit" value="Search" class="btn form-control bg-mycolor1 text-light"/>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3 my-3" style="background:#deedec;">
+            <!-- card -->
+            {% for a in pdata %}
+         <div class="col-lg-3 col-md-6 col-sm-12">
+             <div class="card">
+                 <img src="/{{a.student_picture}}" style="max-height:220px;" class="card-img-top"/>
+                 <div class="card-body">
+                     <p class="card-text">
+                         <b>{{a.student_name}}</b><br/>
+                         <small>{{a.batch}} || {{a.session}}</small><br/>
+                         {{a.company_name}} <img src="/{{a.company_logo}}" class="img-thumbnail" style="height:50px"/>
+                         <br/>
+                         {{a.college}}
+                     </p>
+                 </div>
+             </div>
+
+         </div>
+            <!-- end card -->
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

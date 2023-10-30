@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+    height:45px;
+    margin-bottom:15px;
+    border-color: aqua;
+    background-image: -webkit-linear-gradient(495deg,
+    yellow 30%, aqua 80%);
+    min-height:2px; 
+    box-shadow: 5px 5px 5px black; 
+    }
+    .btn 
+    {
+        box-shadow: 5px 5px 5px black; 
+      
+    }
+</style>
+<div class="text-center txt-mycolor1 fs-2 mt-3">Sign <b class="txt-mycolor2">Up</b></div>
+<div class="row">
+    <div class="col-sm-10 mx-auto py-4">
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    Name
+                    <input type="text" name="name" required placeholder="Name.." class="form-control"/>
+                   Email
+                    <input type="email" name="email" required placeholder="Email.." class="form-control"/>
+                    Password
+                    <input type="password" name="passwd"required placeholder="Password.." class="form-control"/>
+                    Mobile (Whatsapp No )
+                    <input type="number" name="mobile" required placeholder="Mobile.." class="form-control"/>
+                    College
+                    <input type="text" name="college" required placeholder="College.." class="form-control"/>
+                   Course
+                    <input type="text" name="course" required placeholder="Course.." class="form-control"/>
+                    <select name="pyear" class="form-control">
+                        <option>--Select Pursuing Year--</option>
+                        <option>I Year</option>
+                        <option>II Year</option>
+                        <option>III Year</option>
+                        <option>IV Year</option>
+                    </select>
+                    <select name="batch" class="form-control">
+                        <option>--Select your Batch--</option>
+                        {% for i in bdata %}
+                        <option value="{{i.id}}">{{i.batch_name}}</option>
+                        {% endfor %}
+                    </select>
+                    Profile Picture
+                    <input type="file" name="fu" class="form-control"/>
+                    <input type="submit" value="Save" class="btn bg-danger text-light"/>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <img src="{% static 'images/background2.jpg'  %}" height="800px" width="780px"/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

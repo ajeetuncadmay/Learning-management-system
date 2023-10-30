@@ -1,0 +1,107 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block childpage %}
+
+<div class="row">
+
+
+    <div class="col-sm-9 p-2">
+        <!-- start slider -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="{% static 'images/p11.jpeg' %}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/p11.jpeg' %}" style="max-height:500px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+  {% for i in sd %}
+    <div class="carousel-item">
+      <img src="/{{i.slider_picture}}" style="max-height:350px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ i.headlines}}</h5>
+        <p>{{ i.slider_dec}}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        <!-- end slider -->
+    </div>
+    <div class="col-sm-3">
+      <div class="fs-4 text-center txt-mycolor1">New <b class="txt-mycolor2Batches">Batches</b></div>
+       <marquee direction="up" behavior="alternate"  height="500px" onmouseover="stop()" behavior="" onmouseleave="start()">
+
+{% for i in nbdata %}
+
+        <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{i.batch_pic}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style="font-size:9px">
+         <big> {{i.name}}</big><br/>
+          <i class="fa-solid fa-calendar-days"></i>
+          {{i.starting_date}}
+
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+      {% endfor %}
+
+      </marquee>
+    </div>
+</div>
+
+
+<!-- start latest news -->
+<div class="row news py-3">
+  <div class="fs-2">Latest <b class="txt-mycolor">Batches</b></div>
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+   <div class="col-sm-3 py-2">
+     <div class="card">
+       <img src="{% static 'images/p12.jpeg'%}" class="card-img-top"/>
+       <div class="card-body">
+         <h5 class="card-title">Headlines</h5>
+         <b>Category</b><br/>
+         <a href="#" class="btn bg-mycolor text-light mt-2">View More
+         <i class="fa-regular fa-eye"></i>
+         </a><br/>
+
+           <b class="text-muted">Updated at:
+             <i class="fa-regular fa-calendar-days"></i>
+           </b>7PM 09-09-2023
+
+       </div>
+     </div>
+   </div>
+    </div>
+  </div>
+</div>
+<!-- end latest news -->
+{% endblock %}

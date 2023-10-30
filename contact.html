@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+    height:45px;
+    margin-bottom:1%;
+    background-image: -webkit-linear-gradient(495deg,
+    blue 20%, aqua 60%);
+    min-height:2px; 
+    box-shadow: 5px 5px 5px black
+    }
+    .btn 
+    {
+        box-shadow: 5px 5px 5px black; 
+      
+    }
+    
+</style>
+
+<div class="text-center fs-2">
+    Contact <b class="txt-mycolor">Us <i class="fa-regular fa-address-card"></i></b></div>
+    <div><center>you may contact us by contact number or fill this form any time
+        you need professional or</center>
+    <center>have any question</center>
+
+
+    <div class="row">
+     <div class="col-sm-10 mx-auto">
+         <div class="row">
+             <div class="col-sm-6">
+               <form method ="post">
+                   {% csrf_token %}  <!-- class site request forvel  for security purpose -->
+                   Name <input type="text" name="name" placeholder="Name..."class="form-control">
+                   Email <input type="email" name="email" placeholder="Email..."class="form-control">
+                   Mobile <input type="number"name="mobile" placeholder="Mobile no..."class="form-control">
+                   Massage<textarea style="min-height:80px;resize:none;" name="message" class="form-control" required></textarea>
+                   <center><input type="submit" value="save" class="btn bg-primary"/></center><br/>
+               </form>
+             </div>
+
+             <div class="col-sm-6 py-4">
+
+                 <img src="{% static 'images/con3.jpeg'%}"  class="img-fluid" height="1000px" width="750px"/><br/>
+             </div>
+         </div>
+     </div>
+    </div>
+
+
+
+    </div>
+{% endblock %}
